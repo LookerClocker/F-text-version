@@ -1,6 +1,6 @@
 'use strict';
 
-const NODE_ENV =  process.env.NODE_ENV || 'dvelopment';
+const NODE_ENV =  process.env.NODE_ENV || 'development';
 const debug = process.env.NODE_ENV !== 'production';
 const webpack = require('webpack');
 const path = require('path');
@@ -50,5 +50,4 @@ module.exports = {
             drop_console: true
         })
     ]
-
 };
