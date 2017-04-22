@@ -1,0 +1,47 @@
+{
+  "name": "f1",
+  "version": "0.0.1",
+  "description": "trying to do universal js app",
+  "main": "src/server.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LookerClocker/Project_F_v0.git"
+  },
+  "keywords": [
+    "node"
+  ],
+  "scripts": {
+    "start": "cross-env NODE_ENV=production node_modules/.bin/babel-node --presets react,es2015 src/server.js",
+    "start-dev": "npm run start-dev-hmr",
+    "start-dev-single-page": "node_modules/.bin/http-server src/static",
+    "start-dev-hmr": "node_modules/.bin/webpack-dev-server --progress --inline --hot --open",
+    "build": "cross-env NODE_ENV=production node_modules/.bin/webpack -p"
+  },
+  "author": "Sasha Kushnir",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/LookerClocker/Project_F_v0/issues"
+  },
+  "homepage": "https://github.com/LookerClocker/Project_F_v0#readme",
+  "dependencies": {
+    "babel-cli": "^6.24.1",
+    "babel-core": "^6.24.1",
+    "babel-loader": "^7.0.0",
+    "babel-plugin-react-html-attrs": "^2.0.0",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-react": "^6.24.1",
+    "babel-preset-react-hmre": "^1.1.1",
+    "cross-env": "^4.0.0",
+    "ejs": "^2.5.6",
+    "express": "^4.15.2",
+    "react": "^15.5.4",
+    "react-dom": "^15.5.4",
+    "react-router": "^4.1.1"
+  },
+  "devDependencies": {
+    "http-server": "^0.9.0",
+    "react-hot-loader": "^1.3.1",
+    "webpack": "^2.4.1",
+    "webpack-dev-server": "^2.4.2"
+  }
+}
