@@ -1,6 +1,5 @@
 'use strict';
 
-const NODE_ENV =  process.env.NODE_ENV || 'development';
 const debug = process.env.NODE_ENV !== 'production';
 const webpack = require('webpack');
 const path = require('path');
@@ -26,7 +25,7 @@ module.exports = {
 
     devtool: debug ? 'sourcemap' : '',
 
-    watch: debug,
+    // watch: debug,
 
     module: {
         loaders:[{
@@ -40,7 +39,7 @@ module.exports = {
 
     plugins: [
         new webpack.DefinePlugin({
-            NODE_ENV: JSON.stringify(NODE_ENV)
+            'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV)
         }),
         // new webpack.optimize.CommonsChunkPlugin({
         //     name: 'common'
