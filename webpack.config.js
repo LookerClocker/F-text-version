@@ -27,9 +27,21 @@ module.exports = {
 
     // watch: debug,
 
+    resolve: {
+        modules: ['node_modules'],
+        extensions: ['.js', '.jsx']
+    },
+
+    resolveLoader: {
+        modules: ['node_modules'],
+        moduleExtensions: ['-loader'],
+        extensions: ['.js','.jsx']
+    },
+
     module: {
-        loaders:[{
-            test: path.join(__dirname, 'src'),
+        rules: [{
+            // test: path.join(__dirname, 'src'),
+            test: /\.(js|jsx)$/,
             loader: 'babel-loader',
             query: {
                 presets: debug ? ['react', 'es2015', 'react-hmre'] : ['react', 'es2015']
