@@ -40,8 +40,8 @@ module.exports = {
 
     module: {
         rules: [{
-            // test: path.join(__dirname, 'src'),
-            test: /\.(js|jsx)$/,
+            test: path.join(__dirname, 'src'),
+            // test: /\.(js|jsx)$/,
             loader: 'babel-loader',
             query: {
                 presets: debug ? ['react', 'es2015', 'react-hmre'] : ['react', 'es2015']
