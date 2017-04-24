@@ -1,15 +1,16 @@
 'use strict';
 
 import React from 'react'
-import { Route, IndexRoute } from 'react-router'
-import Layout from './components/ComponentOne';
-import IndexPage from './components/ComponentTwo';
+import { Route, IndexRoute } from 'react-router';
+import ComponentOne from './components/ComponentOne';
+import ComponentTwo from './components/ComponentTwo';
 
 
 
 const routes = (
-    <Route path="/" component={Layout}>
-        <IndexRoute component={IndexPage}/>
+    <Route path="/" component={ComponentOne}>
+        <IndexRoute component={ComponentOne}/>
+        <Route path="/two" component={ComponentTwo}/>
     </Route>
 );
 

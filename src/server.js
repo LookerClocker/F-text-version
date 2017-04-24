@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDomServer from 'react-dom/server';
-import Index from './components/ComponentOne';
+import ComponentOne from './components/ComponentOne';
 
 const port = process.env.PORT || 3000;
 const env = process.env.NODE_ENV || 'production';
@@ -13,7 +13,7 @@ app.set('view engine', 'ejs');
 
 app.get('/', function (req, res) {
 
-    let markup = ReactDomServer.renderToStaticMarkup(<Index/>);
+    let markup = ReactDomServer.renderToString(<ComponentOne/>);
 
     return res.render('index.ejs', {markup});
 

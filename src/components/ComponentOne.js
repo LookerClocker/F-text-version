@@ -1,8 +1,8 @@
 
-import React from 'react';
-import { Link } from 'react-router';
+import React, { Component } from 'react';
 
-export default class Main extends React.Component {
+
+export default class ComponentOne extends Component {
     render() {
         return(
             <div>

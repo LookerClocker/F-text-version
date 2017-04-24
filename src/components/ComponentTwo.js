@@ -1,7 +1,7 @@
 
-import React from 'react';
+import React, { Component } from 'react';
 
-export default class MainIndex extends React.Component {
+export default class ComponentTwo extends Component {
     render() {
         return(
             <div>
