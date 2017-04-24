@@ -1,12 +1,6 @@
-// import React from 'react';
-// import { renderToString } from 'react-dom/server';
-// import MainIndex from './components/MainIndex';
-
-let React = require('react');
-let MainIndex = require('./components/ComponentTwo');
-let renderToString = require('react-dom/server');
-
-var ReactDOMServer = require('react-dom/server');
+import React from 'react';
+import ReactDomServer from 'react-dom/server';
+import Index from './components/ComponentOne';
 
 const port = process.env.PORT || 3000;
 const env = process.env.NODE_ENV || 'production';
@@ -14,18 +8,15 @@ const env = process.env.NODE_ENV || 'production';
 let express = require('express');
 let app = express();
 
-require("babel-register");
-
-let ComponentFactory = React.createFactory(MainIndex);
+app.set('views', __dirname + '/views');
+app.set('view engine', 'ejs');
 
 app.get('/', function (req, res) {
 
-    // let markup = renderToString(<MainIndex/>);
+    let markup = ReactDomServer.renderToStaticMarkup(<Index/>);
 
-    let markup = ReactDOMServer.renderToString(ComponentFactory());
+    return res.render('index.ejs', {markup});
 
-    // return res.render('index', {markup});
-    return res.send(markup);
 });
 
 app.listen(3000, function () {
