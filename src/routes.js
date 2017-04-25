@@ -6,7 +6,6 @@ import ComponentOne from './components/ComponentOne';
 import ComponentTwo from './components/ComponentTwo';
 
 
-
 const routes = (
     <Route path="/" component={ComponentOne}>
         <IndexRoute component={ComponentOne}/>

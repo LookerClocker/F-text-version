@@ -1,0 +1,15 @@
+
+
+simple static rendering react component through nodejs
+ app.get('/', function (req, res) {
+
+     let markup = ReactDomServer.renderToString(<ComponentOne/>);
+
+     return res.render('index.ejs', {markup});
+
+ });
+ ------------------------------------------------------------------
+
+ process.env.UNIVERSAL == false. Don`t know why
+
+ ------------------------------------------------------------------
