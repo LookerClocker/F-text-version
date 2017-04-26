@@ -5,7 +5,7 @@ import routes from '../routes';
 export default class AppRoutes extends Component {
     render() {
         return (
-            <Router history={browserHistory} routes={routes} onUpdate={() => window.scrollTo(0, 0)}/>
+            <Router history={true} routes={routes} onUpdate={() => window.scrollTo(0, 0)}/>
         );
     }
 }
