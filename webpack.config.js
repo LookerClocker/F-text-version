@@ -4,7 +4,7 @@ const debug = process.env.NODE_ENV !== 'production';
 const webpack = require('webpack');
 const path = require('path');
 
-const ExtractTextPlugin = require("extract-text-webpack-plugin");
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 module.exports = {
 
@@ -37,11 +37,11 @@ module.exports = {
     resolveLoader: {
         modules: ['node_modules'],
         moduleExtensions: ['-loader'],
-        extensions: ['.js','.jsx']
+        extensions: ['.js', '.jsx']
     },
 
     module: {
-        rules: [
+        loaders: [
             {
                 test: path.join(__dirname, 'src'),
                 loader: 'babel-loader',
@@ -50,23 +50,14 @@ module.exports = {
                 }
             },
 
-            {
-                test: /\.css$/,
-                use: ExtractTextPlugin.extract({
-                    fallback: 'style-loader',
-                    use: ['css-loader']
-                })
-            }
-
-
-            // { test:/\.css$/, use: ['isomorphic-style-loader','style-loader','css-loader']}
+            {test: /\.css$/, use: ['isomorphic-style-loader', 'style-loader', 'css-loader']}
 
             // {
-            //     test: /\.scss$/,
+            //     test: /\.css$/,
             //     use: ExtractTextPlugin.extract({
-            //     fallback: 'style-loader',
-            //     use: ['css-loader','sass-loader']
-            // })
+            //         fallback: 'style-loader',
+            //         use: "css-loader"
+            //     })
             // }
         ]
     },
@@ -74,13 +65,11 @@ module.exports = {
     plugins: [
         new webpack.DefinePlugin({
             'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV)
-            // 'process.env': {
-            //   BROWSER: JSON.stringify(true)
-            // }
         }),
 
         new ExtractTextPlugin({
-            filename: 'style.css',
+            filename: './src/static/style.css',
+            disable: false,
             allChunks: true
         }),
 

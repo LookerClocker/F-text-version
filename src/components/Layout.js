@@ -1,6 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
+import styles from '../static/css/style.css';
+
 export const Layout = props => (
     <div className="app-container">
         <header>
