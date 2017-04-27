@@ -31,13 +31,13 @@ module.exports = {
 
     resolve: {
         modules: ['node_modules'],
-        extensions: ['.js', '.jsx']
+        extensions: ['.js', '.jsx', '.css', '.sass']
     },
 
     resolveLoader: {
         modules: ['node_modules'],
         moduleExtensions: ['-loader'],
-        extensions: ['.js', '.jsx']
+        extensions: ['.js', '.jsx', '.css', 'sass']
     },
 
     module: {
@@ -50,15 +50,14 @@ module.exports = {
                 }
             },
 
-            {test: /\.css$/, use: ['isomorphic-style-loader', 'style-loader', 'css-loader']}
-
-            // {
-            //     test: /\.css$/,
-            //     use: ExtractTextPlugin.extract({
-            //         fallback: 'style-loader',
-            //         use: "css-loader"
-            //     })
-            // }
+            {
+                test: /.css$/,
+                use: ExtractTextPlugin.extract({
+                    fallback: ['style-loader'],
+                    use: ['css-loader'],
+                    publicPath: path.join(__dirname, 'src', 'static', 'css')
+                })
+            }
         ]
     },
 
@@ -68,7 +67,7 @@ module.exports = {
         }),
 
         new ExtractTextPlugin({
-            filename: './src/static/style.css',
+            filename: "../css/main.css",
             disable: false,
             allChunks: true
         }),

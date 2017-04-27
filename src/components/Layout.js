@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-import styles from '../static/css/style.css';
+import styles from '../static/css/main.css';
 
 export const Layout = props => (
     <div className="app-container">
@@ -10,7 +10,7 @@ export const Layout = props => (
                 Layout Link
             </Link>
         </header>
-        <div className="app-content">{props.children}</div>
+        <div>{props.children}</div>
         <footer>
             <p>
                footer
