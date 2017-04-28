@@ -1,8 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-import styles from '../css/server.css';
-
 export const Layout = props => (
     <div>
         <header>
@@ -10,7 +8,7 @@ export const Layout = props => (
                 Layout Link
             </Link>
         </header>
-        <p className={styles.a}>hello Layout</p>
+        <p>hello Layout</p>
         <div>{props.children}</div>
         <footer>
             <p>
