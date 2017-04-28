@@ -10,7 +10,7 @@ export const Layout = props => (
                 Layout Link
             </Link>
         </header>
-        <p className={styles.a}>hello</p>
+        <p className={styles.a}>hello Layout</p>
         <div>{props.children}</div>
         <footer>
             <p>

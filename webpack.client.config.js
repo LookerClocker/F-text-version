@@ -45,7 +45,7 @@ module.exports = {
             {
                 test: /.css$/,
                 use: ExtractTextPlugin.extract({
-                    fallback: ['style-loader'],
+                    fallback: 'style-loader',
                     use: ['css-loader'],
                     // publicPath: path.join(__dirname, 'src', 'static', 'css')
                 })
