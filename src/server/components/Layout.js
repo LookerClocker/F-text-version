@@ -1,15 +1,16 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-import styles from '../static/css/main.css';
+import styles from '../css/server.css';
 
 export const Layout = props => (
-    <div className="app-container">
+    <div>
         <header>
             <Link to="/">
                 Layout Link
             </Link>
         </header>
+        <p className={styles.a}>hello</p>
         <div>{props.children}</div>
         <footer>
             <p>
